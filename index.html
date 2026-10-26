@@ -330,7 +330,8 @@ footer{color:var(--light);padding-block:32px calc(100px + env(safe-area-inset-bo
   background:var(--ink);color:var(--light);padding:12px 18px;border-radius:999px;font-size:13px;box-shadow:0 8px 30px rgba(20,18,18,.25);transition:opacity .35s ease,translate .45s cubic-bezier(.2,.7,.2,1);white-space:nowrap}
 .toast.is-on{opacity:1;translate:-50% 0}
 @media (hover:none),(max-width:860px){body::after,.grain{animation:none}}
-.wordmark .ch>span,.cover-figure,.proc-photo,.proc-photo img,.ft-big{will-change:transform}
+.wordmark .ch>span,.proc-photo,.proc-photo img,.ft-big{will-change:transform}
+.cover-figure{will-change:transform,filter,opacity}
 /* ---------- contour thread + stitches ---------- */
 .card{position:relative}
 .thread-svg{position:absolute;left:0;overflow:visible;pointer-events:none;z-index:5;will-change:transform}
@@ -1250,12 +1251,12 @@ mm.add('(prefers-reduced-motion: no-preference)', function(){
       // Phones: only the photo and the wordmark leave, text and buttons stay readable
       gsap.timeline({defaults:{immediateRender:false}, scrollTrigger:{trigger:'.cover-stage', start:'center 40%', end:'bottom top', scrub:1}})
         .fromTo('.wordmark .ch > span', {yPercent:0}, {yPercent:110, stagger:.06, ease:'power2.in', duration:1}, 0)
-        .fromTo('.cover-figure', {filter:'grayscale(0)', opacity:1, scale:1}, {filter:'grayscale(1)', opacity:.35, scale:1.04, ease:'power1.in', duration:1.2}, 0);
+        .fromTo('.cover-figure', {filter:'blur(0px) grayscale(0)', opacity:1, scale:1}, {filter:'blur(10px) grayscale(1)', opacity:.35, scale:1.04, ease:'power1.in', duration:1.2}, 0);
       return;
     }
     gsap.timeline({defaults:{immediateRender:false}, scrollTrigger:{trigger:'.cover', start:'top top', end:'bottom 35%', scrub:1}})
       .fromTo('.wordmark .ch > span', {yPercent:0}, {yPercent:110, stagger:.06, ease:'power2.in', duration:1}, 0)
-      .fromTo('.cover-figure', {filter:'grayscale(0)', opacity:1, scale:1}, {filter:'grayscale(1)', opacity:.2, scale:1.05, ease:'power1.in', duration:1.2}, 0)
+      .fromTo('.cover-figure', {filter:'blur(0px) grayscale(0)', opacity:1, scale:1}, {filter:'blur(14px) grayscale(1)', opacity:.2, scale:1.05, ease:'power1.in', duration:1.2}, 0)
       .fromTo('.cover-meta span', {opacity:1, y:0}, {opacity:0, y:-10, stagger:.05, duration:.5}, 0)
       .fromTo('.cover-left > *, .cover-right .ln', {clipPath:'inset(0% 0% 0% 0%)', y:0, opacity:1}, {clipPath:'inset(0% 0% 100% 0%)', y:-16, opacity:0, stagger:.05, duration:.8}, 0)
       .fromTo('.cover-ctas, .cover-chip', {opacity:1, y:0}, {opacity:0, y:20, stagger:.08, duration:.6}, .1);
