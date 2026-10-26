@@ -6,6 +6,19 @@
 <title>EVGERA · Evgeniya Gera</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="theme-color" content="#141212">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<!-- link previews (Telegram, Instagram, Facebook). Change the address here after moving to your own domain -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:site_name" content="EVGERA">
+<meta property="og:title" content="Євгенія Гера — естетика брів, вій і перманентного макіяжу в Одесі">
+<meta property="og:description" content="Оформлення брів, ламінування вій, перманентний макіяж, трихопігментація. Природний результат без надмірності.">
+<meta property="og:url" content="https://dmitriykost-sys.github.io/evgera/">
+<meta property="og:image" content="https://dmitriykost-sys.github.io/evgera/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="description" content="Євгенія Гера — майстер естетичних beauty-послуг в Одесі: оформлення брів, ламінування вій, перманентний макіяж, трихопігментація.">
 <link rel="preload" as="image" href="img/hero-evgeniya.webp" imagesrcset="img/hero-evgeniya-md.webp 800w, img/hero-evgeniya.webp 1080w" imagesizes="(max-width:860px) 94vw, 40vw" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" href="fonts/playfair-display-latin-400-normal.woff2" crossorigin>
@@ -15,7 +28,7 @@
 :root{
   --ink:#1C1917; --binding:#141212; --paper:#FFFFFF; --cream:#F4EFEA; --sand:#F4EFEA;
   --text-2:#4A423C; --muted:#6B625B; --muted-on-dark:#A8A097; --line:#ECE6E0; --line-strong:#D9D0C7;
-  --taupe:#8C6E5D; --taupe-deep:#6F5547; --olive:#1C1917; --olive-deep:#3A3330; --sage:#ECE6E0; --light:#F7F3EF;
+  --taupe:#8C6E5D; --taupe-deep:#6F5547; --ink-hover:#3A3330; --sage:#ECE6E0; --light:#F7F3EF;
   --f-display:'Playfair Display', 'Didot', 'Bodoni 72', Georgia, serif;
   --f-script:'Cormorant Garamond', 'Times New Roman', Georgia, serif;
   --f-body:'Manrope', 'Helvetica Neue', Arial, sans-serif;
@@ -34,7 +47,6 @@ img,video{display:block;max-width:100%}
 a{color:inherit}
 h1,h2,h3{text-wrap:balance}
 :focus-visible{outline:2px solid var(--taupe);outline-offset:3px;border-radius:6px}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 
 /* ---------- header ---------- */
@@ -54,14 +66,14 @@ h1,h2,h3{text-wrap:balance}
 .lang button[aria-pressed="true"]{opacity:1;text-decoration:underline;text-underline-offset:4px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;border-radius:999px;border:0;font-family:var(--f-body);font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background-color .25s ease,color .25s ease}
 .btn-primary{background:var(--taupe);color:#fff}.btn-primary:hover{background:var(--taupe-deep)}
-.btn-olive{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}.btn-olive:hover{background:var(--ink);color:#fff}
-.menu .btn-olive{color:var(--light);box-shadow:inset 0 0 0 1px rgba(247,243,239,.5)}.menu .btn-olive:hover{background:var(--light);color:var(--ink)}
+.btn-outline{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}.btn-outline:hover{background:var(--ink);color:#fff}
+.menu .btn-outline{color:var(--light);box-shadow:inset 0 0 0 1px rgba(247,243,239,.5)}.menu .btn-outline:hover{background:var(--light);color:var(--ink)}
 .btn-light{background:var(--light);color:var(--ink);min-height:44px;padding:0 22px;font-size:11px}.btn-light:hover{background:var(--sage)}
 .magnetic{will-change:transform}
 
 /* ---------- page wrapper ---------- */
 main{display:flex;flex-direction:column;gap:16px;padding-top:16px;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
-.card{background:var(--paper);border-radius:var(--r-card);overflow:hidden}
+.card{position:relative;background:var(--paper);border-radius:var(--r-card);overflow:hidden}
 .card-pad{padding:clamp(40px,6vw,96px) clamp(20px,4vw,64px)}
 
 /* ---------- cover ---------- */
@@ -147,7 +159,7 @@ html[lang="en"] .sig-uk,html:not([lang="en"]) .sig-en{display:none}
 .insta:hover{background:var(--cream)}
 .insta strong{font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1.15}
 .insta span{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--text-2)}
-.insta i{width:40px;height:40px;border-radius:50%;background:var(--olive);display:flex;align-items:center;justify-content:center;transition:transform .5s ease}
+.insta i{width:40px;height:40px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;transition:transform .5s ease}
 .insta:hover i{transform:rotate(-45deg)}
 
 /* before / after */
@@ -161,7 +173,7 @@ html[lang="en"] .sig-uk,html:not([lang="en"]) .sig-en{display:none}
 .ba-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none;pointer-events:none}
 .ba-frame .before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
 .ba-line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:#fff;pointer-events:none}
-.ba-knob{position:absolute;top:50%;left:var(--pos);width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:var(--olive);display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 2px 10px rgba(20,18,18,.25)}
+.ba-knob{position:absolute;top:50%;left:var(--pos);width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 2px 10px rgba(20,18,18,.25)}
 .ba-tag{position:absolute;top:14px;z-index:1;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.92);font-size:11px;letter-spacing:.14em;text-transform:uppercase;pointer-events:none}
 .ba-tag.l{left:14px}.ba-tag.r{right:14px}
 .ba-frame input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none}
@@ -183,13 +195,13 @@ html[lang="en"] .sig-uk,html:not([lang="en"]) .sig-en{display:none}
 @keyframes spin{to{transform:rotate(360deg)}}
 .proc-photo{position:absolute;inset:40px;border-radius:50%;overflow:hidden}
 .proc-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 85%}
-.play{position:absolute;right:58px;bottom:58px;width:68px;height:68px;border-radius:50%;border:0;background:var(--olive);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:scale .35s ease,background-color .3s ease}
-.play:hover{scale:1.08;background:var(--olive-deep)}
+.play{position:absolute;right:58px;bottom:58px;width:68px;height:68px;border-radius:50%;border:0;background:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:scale .35s ease,background-color .3s ease}
+.play:hover{scale:1.08;background:var(--ink-hover)}
 .proc-b{flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:22px}
 .proc-b p{margin:0;font-size:16px;line-height:1.7;color:var(--text-2)}
 .more{display:inline-flex;align-items:center;gap:12px;font-size:13px;text-decoration:none;color:var(--ink);min-height:44px}
-.more i{width:36px;height:36px;border-radius:50%;background:var(--olive);display:inline-flex;align-items:center;justify-content:center;transition:transform .4s ease}
-.more:hover i{transform:translateX(4px);background:var(--olive-deep)}
+.more i{width:36px;height:36px;border-radius:50%;background:var(--ink);display:inline-flex;align-items:center;justify-content:center;transition:transform .4s ease}
+.more:hover i{transform:translateX(4px);background:var(--ink-hover)}
 
 /* ---------- services ---------- */
 .services{background:#F2F3F3;display:flex;flex-direction:column;gap:48px}
@@ -205,8 +217,8 @@ html[lang="en"] .sig-uk,html:not([lang="en"]) .sig-en{display:none}
 .sv-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1 1 auto}
 .sv-body h3{margin:0;font-size:15px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 .sv-body p{margin:0;font-size:14px;line-height:1.65;color:var(--text-2);flex:1 1 auto}
-.sv-body a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--olive);font-weight:600;min-height:32px;display:flex;align-items:center}
-.sv-body a:hover{color:var(--olive-deep)}
+.sv-body a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--ink);font-weight:600;min-height:32px;display:flex;align-items:center}
+.sv-body a:hover{color:var(--ink-hover)}
 
 /* ---------- booking ---------- */
 .book{display:flex;flex-wrap:wrap}
@@ -308,7 +320,6 @@ footer{color:var(--light);padding-block:32px calc(100px + env(safe-area-inset-bo
   .book-btns .btn{width:100%}
 }
 
-
 .to-top{position:fixed;z-index:55;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border:0;border-radius:50%;padding:0;cursor:pointer;
   background:rgba(28,25,23,.94);color:var(--light);display:flex;align-items:center;justify-content:center;
   box-shadow:0 6px 24px rgba(20,18,18,.22);
@@ -324,16 +335,14 @@ footer{color:var(--light);padding-block:32px calc(100px + env(safe-area-inset-bo
 @media (max-width:860px){footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}.to-top{width:48px;height:48px;right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px))}}
 @media (prefers-reduced-motion:reduce){.to-top{transition:opacity .2s ease,visibility .2s}}
 
-
-
 .toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:130;translate:-50% 12px;opacity:0;pointer-events:none;
   background:var(--ink);color:var(--light);padding:12px 18px;border-radius:999px;font-size:13px;box-shadow:0 8px 30px rgba(20,18,18,.25);transition:opacity .35s ease,translate .45s cubic-bezier(.2,.7,.2,1);white-space:nowrap}
 .toast.is-on{opacity:1;translate:-50% 0}
 @media (hover:none),(max-width:860px){body::after,.grain{animation:none}}
+/* layers for scroll-driven transforms */
 .wordmark .ch>span,.proc-photo,.proc-photo img,.ft-big{will-change:transform}
 .cover-figure{will-change:transform,filter,opacity}
-/* ---------- contour thread + stitches ---------- */
-.card{position:relative}
+/* ---------- thread + stitches ---------- */
 .thread-svg{position:absolute;left:0;overflow:visible;pointer-events:none;z-index:5;will-change:transform}
 .th-dot{position:absolute;left:0;top:0;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:rgba(168,130,108,.22);pointer-events:none;z-index:6;opacity:0;transition:opacity .3s ease;will-change:transform}
 .th-dot::after{content:"";position:absolute;left:6px;top:6px;width:6px;height:6px;border-radius:50%;background:#2A211C}
@@ -345,7 +354,7 @@ footer{color:var(--light);padding-block:32px calc(100px + env(safe-area-inset-bo
 .sv-grid{position:relative;z-index:1}
 .stitch{display:block;height:1px;width:100%;color:#CDBFB4;background:repeating-linear-gradient(90deg,currentColor 0 6px,transparent 6px 11px);transform-origin:0 50%}
 footer .stitch{color:rgba(247,243,239,.28)}
-/* ---------- wow II ---------- */
+/* ---------- smooth scroll, manifesto, footer wordmark ---------- */
 html.lenis,html.lenis body{height:auto}.lenis:not(.lenis-autoToggle).lenis-stopped{overflow:clip}.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}.lenis.lenis-smooth iframe{pointer-events:none}
 html.lenis{scroll-behavior:auto}
 .manifesto{min-height:calc(100vh - 92px);display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,3vw,40px)}
@@ -357,7 +366,7 @@ html[lang="en"] .mf-uk, html:not([lang="en"]) .mf-en{display:none}
 .ln-in{display:block}
 .ft-big{font-family:var(--f-display);font-size:clamp(78px,19vw,290px);line-height:.85;text-align:center;letter-spacing:-.01em;display:block}
 @media (max-width:860px){.manifesto{min-height:78vh}.mf-text{font-size:clamp(30px,8.6vw,44px)}}
-/* ---------- wow layer ---------- */
+/* ---------- ambient background, progress, loader, lightbox, video, services help ---------- */
 body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;
   background:radial-gradient(38% 32% at 28% 30%, rgba(184,155,136,.13), transparent 70%),radial-gradient(34% 30% at 74% 72%, rgba(140,110,93,.15), transparent 70%);
   animation:breathe 22s ease-in-out infinite alternate}
@@ -406,11 +415,8 @@ html.is-loading{overflow:hidden}
   .lb-fig img{max-height:calc(100vh - 270px)}
 }
 @media (prefers-reduced-motion:reduce){
-  body::after{animation:none}
-}
-@media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .grain,.ring,.marquee-track{animation:none}
+  body::after,.grain,.ring,.marquee-track{animation:none}
   .tab-pill{transition:none}
 }
 </style>
@@ -464,7 +470,7 @@ html.is-loading{overflow:hidden}
     </div>
     <div class="cover-ctas">
       <a class="btn btn-primary magnetic" href="#book" data-i18n="cta.book">Записатися</a>
-      <a class="btn btn-olive" href="#works" data-i18n="cover.works">Дивитися роботи</a>
+      <a class="btn btn-outline" href="#works" data-i18n="cover.works">Дивитися роботи</a>
     </div>
     <a class="cover-chip" href="#book">
       <img decoding="async" src="img/avatar.webp" alt="" width="36" height="36">
@@ -618,7 +624,7 @@ html.is-loading{overflow:hidden}
     </div>
     <div class="sv-grid">
       <article class="sv-card">
-        <div class="ph"><img src="img/service-brows.webp" alt="Оформлення брів" data-i18n-alt="sv.1t" loading="lazy" style="object-position:50% 66%" width="960" height="1280" decoding="async" srcset="img/service-brows-sm.webp 640w, img/service-brows.webp 960w" sizes="(max-width:860px) 70vw, 25vw"></div>
+        <div class="ph"><img src="img/service-brows.webp?v=2" alt="Оформлення брів" data-i18n-alt="sv.1t" loading="lazy" style="object-position:50% 66%" width="960" height="1280" decoding="async" srcset="img/service-brows-sm.webp?v=2 640w, img/service-brows.webp?v=2 960w" sizes="(max-width:860px) 70vw, 25vw"></div>
         <div class="sv-body">
           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#1C1917" stroke-width="1.2" aria-hidden="true"><path d="M3 18c6-8 17-9 24-5"/><path d="M6 16l1-3M11 13l.5-3M16 12l.2-3M21 12.5l-.2-3"/></svg>
           <h3 data-i18n="sv.1t">Оформлення брів</h3>
@@ -670,7 +676,7 @@ html.is-loading{overflow:hidden}
       <a class="phone" href="tel:+380939837065">+380 93 983 70 65</a>
       <div class="book-btns">
         <a class="btn btn-primary magnetic" href="https://t.me/evgera_od" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn btn-olive" href="https://wa.me/message/75BTGV6A6IYVH1" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-outline" href="https://wa.me/message/75BTGV6A6IYVH1" target="_blank" rel="noopener">WhatsApp</a>
       </div>
       <p class="meta"><span data-i18n="bk.city">Одеса</span> · <a href="https://instagram.com/evgera.permanent" target="_blank" rel="noopener">@evgera.permanent</a></p>
     </div>
@@ -724,7 +730,7 @@ html.is-loading{overflow:hidden}
     <a class="phone" href="tel:+380939837065">+380 93 983 70 65</a>
     <div class="menu-btns">
       <a class="btn btn-light" href="https://t.me/evgera_od" target="_blank" rel="noopener">Telegram</a>
-      <a class="btn btn-olive" href="https://wa.me/message/75BTGV6A6IYVH1" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-outline" href="https://wa.me/message/75BTGV6A6IYVH1" target="_blank" rel="noopener">WhatsApp</a>
     </div>
     <a href="https://instagram.com/evgera.permanent" target="_blank" rel="noopener" style="font-size:13px;color:#D9CFC5">@evgera.permanent</a>
   </div>
@@ -1018,7 +1024,6 @@ document.addEventListener('keydown', function(e){
   if (!lb.hidden && e.key === 'ArrowLeft') lbShow(lbIndex-1, -1);
 });
 
-
 /* ---------- phone links: when the page is shown inside another frame, calls may be blocked ---------- */
 (function(){
   var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
@@ -1047,7 +1052,7 @@ if (!hasGsap){ if (loaderOn) setTimeout(finishLoader, 600); if (!location.hash) 
 gsap.registerPlugin(ScrollTrigger);
 function hdrH(){ return document.querySelector('.site-header').offsetHeight + 16; }
 
-/* ---------- 1. smooth inertial scroll ---------- */
+/* ---------- smooth inertial scroll ---------- */
 if (!reduce && window.Lenis){
   lenis = new Lenis({lerp:0.1, wheelMultiplier:0.9, smoothWheel:true});
   lenis.on('scroll', ScrollTrigger.update);
@@ -1064,16 +1069,16 @@ if (!reduce && window.Lenis){
   });
 }
 
-/* ---------- 7. chapters: the ground changes colour ---------- */
+/* ---------- chapters: the ground changes colour ---------- */
 var DARK = '#1C1917', BEIGE = '#D8DBDC';
 function ground(c){ gsap.to(document.body, {backgroundColor:c, duration: reduce ? 0 : 1.2, ease:'power2.inOut', overwrite:true}); }
 ScrollTrigger.create({trigger:'#about', start:'top 65%', onEnter:function(){ ground(BEIGE); }, onLeaveBack:function(){ ground(DARK); }});
 ScrollTrigger.create({trigger:'#book', start:'top 65%', onEnter:function(){ ground(DARK); }, onLeaveBack:function(){ ground(BEIGE); }});
 
-/* ---------- 9. headings open line by line from under a mask ---------- */
+/* ---------- headings open line by line from under a mask ---------- */
 function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function maskLines(el){
-  var original = el.innerHTML, words = el.textContent.trim().split(/\s+/);
+  var words = el.textContent.trim().split(/\s+/);
   el.innerHTML = words.map(function(w){ return '<span class="mw">' + esc(w) + '</span>'; }).join(' ');
   var lines = [], last = null;
   el.querySelectorAll('.mw').forEach(function(s){ var top = s.offsetTop; if (last === null || Math.abs(top - last) > 4){ lines.push([]); last = top; } lines[lines.length-1].push(s.textContent); });
@@ -1091,7 +1096,6 @@ function remaskHeadings(){
     headTweens.push(maskLines(el));
   });
 }
-
 
 /* ---------- the thread: one continuous line sewn through the whole issue ---------- */
 var NS = 'http://www.w3.org/2000/svg';
@@ -1278,7 +1282,7 @@ mm.add('(prefers-reduced-motion: no-preference)', function(){
   // Cover parallax: the wordmark trails behind the figure
   gsap.to('.wordmark', {yPercent:10, ease:'none', scrollTrigger:{trigger:'.cover', start:'top top', end:'bottom top', scrub:true}});
 
-  // 3. Manifesto: the words darken one by one, as if read aloud
+  // Manifesto: the words darken one by one, as if read aloud
   gsap.utils.toArray('.mf-text').forEach(function(t){
     gsap.fromTo(t.querySelectorAll('.w'), {color:'#D6CEC4'}, {color:'#1C1917', stagger:.1, ease:'none',
       scrollTrigger:{trigger:'.manifesto', start:'top 70%', end:'bottom 70%', scrub:true}});
@@ -1294,7 +1298,7 @@ mm.add('(prefers-reduced-motion: no-preference)', function(){
     gsap.from(el, {scaleX:0, duration:1.6, ease:'power2.inOut', scrollTrigger:{trigger:el, start:'top 92%', toggleActions:'play none none reverse'}});
   });
 
-  // 9. Headings line by line (after fonts settle, so the lines are measured right)
+  // Headings line by line (after fonts settle, so the lines are measured right)
   var fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
   fontsReady.then(function(){ remaskHeadings(); ScrollTrigger.refresh(); });
 
@@ -1331,7 +1335,7 @@ mm.add('(prefers-reduced-motion: no-preference)', function(){
   gsap.from('#bento > *', {clipPath:'inset(100% 0% 0% 0%)', duration:1.2, ease:'expo.out', stagger:{each:.08, from:'start'}, clearProps:'clipPath', scrollTrigger:{trigger:'#bento', start:'top 80%', toggleActions:'play none none reverse'}});
   gsap.from('#bento img', {scale:1.25, duration:1.8, ease:'expo.out', stagger:.08, clearProps:'transform', scrollTrigger:{trigger:'#bento', start:'top 80%', toggleActions:'play none none reverse'}});
 
-  // 8. Before / After driven by the scroll until the visitor takes the handle
+  // Before / After driven by the scroll until the visitor takes the handle
   gsap.utils.toArray('.ba-frame').forEach(function(f){
     var input = f.querySelector('input'), touched = false;
     var mark = function(){ touched = true; };
@@ -1355,7 +1359,7 @@ mm.add('(prefers-reduced-motion: no-preference)', function(){
   // Booking photo opens sideways
   gsap.fromTo('.book-img', {clipPath:'inset(0% 0% 0% 100%)'}, {clipPath:'inset(0% 0% 0% 0%)', duration:1.6, ease:'expo.out', scrollTrigger:{trigger:'#book', start:'top 75%', toggleActions:'play none none reverse'}});
 
-  // Footer: the video wordmark rises
+  // Footer: the wordmark rises
   gsap.from('.ft-big', {yPercent:40, opacity:.3, ease:'none', scrollTrigger:{trigger:'footer', start:'top bottom', end:'bottom bottom', scrub:true}});
 
   // Magnetic main buttons (fine pointers only)
